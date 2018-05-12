@@ -11,21 +11,66 @@ For complete Marlin documentation click over to the [Marlin Homepage <marlinfw.o
 
 This Release branch contains the latest tagged version of Marlin (currently 1.1.5 – August 2017).
 
+<<<<<<< HEAD
 Previous releases of Marlin include [1.0.2-2](https://github.com/MarlinFirmware/Marlin/tree/1.0.2-2) (December 2016) and [1.0.1](https://github.com/MarlinFirmware/Marlin/tree/1.0.1) (December 2014). Any version of Marlin prior to 1.0.1 (when we started tagging versions) can be collectively referred to as Marlin 1.0.0.
+=======
+## Marlin 2.0 Bugfix Branch
+>>>>>>> origin/MPCNC_Rambo_T8_16T_LCD_DualEndstop
 
 ## Contributing to Marlin
 
+<<<<<<< HEAD
 Click on the [Issue Queue](https://github.com/MarlinFirmware/Marlin/issues) and [Pull Requests](https://github.com/MarlinFirmware/Marlin/pulls) links above at any time to see what we're currently working on.
 
 To submit patches and new features for Marlin 1.1 check out the [bugfix-1.1.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-1.1.x) branch, add your commits, and submit a Pull Request back to the `bugfix-1.1.x` branch. Periodically that branch will form the basis for the next minor release.
 
 Note that our "bugfix" branch will always contain the latest patches to the current release version. These patches may not be widely tested. As always, when using "nightly" builds of Marlin, proceed with full caution.
+=======
+Marlin 2.0 is bringing open source RepRap firmware to the next level with support of much faster 32-bit processor boards.
+
+This branch is for patches to the latest 2.0.x release version. Periodically this branch will form the basis for the next minor 2.0.x release.
+
+Download earlier versions of Marlin on the [Releases page](https://github.com/MarlinFirmware/Marlin/releases).
+
+## Hardware Abstraction Layer (HAL)
+
+Marlin 2.0 adds a new abstraction layer so that Marlin can build and run on 32-bit boards while still retaining the ability to build and run on 8-bit AVR. In this way, new features can be enhanced for more powerful platforms while still supporting AVR, whereas splitting up the code makes it hard to follow these changes and keep them in sync.
+
+### Current HALs
+
+  name|processor|speed|flash|sram|logic|fpu
+  ----|---------|-----|-----|----|-----|---
+  [Arduino AVR](https://www.arduino.cc/)|ATmega, ATTiny, etc.|16-20MHz|64-256k|2-8k|5V|no
+  [Teensy++ 2.0](http://www.microchip.com/wwwproducts/en/AT90USB1286)|[AT90USB1286](http://www.microchip.com/wwwproducts/en/AT90USB1286)|16MHz|128k|8k|5V|no
+  [Due](https://www.arduino.cc/en/Guide/ArduinoDue), [RAMPS-FD](http://www.reprap.org/wiki/RAMPS-FD), etc.|[SAM3X8E ARM-Cortex M3](http://www.microchip.com/wwwproducts/en/ATsam3x8e)|84MHz|512k|64+32k|3.3V|no
+  [Re-ARM](https://www.kickstarter.com/projects/1245051645/re-arm-for-ramps-simple-32-bit-upgrade)|[LPC1768 ARM-Cortex M3](http://www.nxp.com/products/microcontrollers-and-processors/arm-based-processors-and-mcus/lpc-cortex-m-mcus/lpc1700-cortex-m3/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1768FBD100)|100MHz|512k|32+16+16k|3.3-5V|no
+  [MKS SBASE](http://forums.reprap.org/read.php?13,499322)|LPC1768 ARM-Cortex M3|100MHz|512k|32+16+16k|3.3-5V|no
+  [Azteeg X5 GT](https://www.panucatt.com/azteeg_X5_GT_reprap_3d_printer_controller_p/ax5gt.htm)|LPC1769 ARM-Cortex M3|120MHz|512k|32+16+16k|3.3-5V|no
+  [Selena Compact](https://github.com/Ales2-k/Selena)|LPC1768 ARM-Cortex M3|100MHz|512k|32+16+16k|3.3-5V|no
+  [Teensy 3.5](https://www.pjrc.com/store/teensy35.html)|ARM-Cortex M4|120MHz|512k|192k|3.3-5V|yes
+  [Teensy 3.6](https://www.pjrc.com/store/teensy36.html)|ARM-Cortex M4|180MHz|1M|256k|3.3V|yes
+
+### HALs in Development
+
+  name|processor|speed|flash|sram|logic|fpu
+  ----|---------|-----|-----|----|-----|---
+  [STEVAL-3DP001V1](http://www.st.com/en/evaluation-tools/steval-3dp001v1.html)|[STM32F401VE Arm-Cortex M4](http://www.st.com/en/microcontrollers/stm32f401ve.html)|84MHz|512k|64+32k|3.3-5V|yes
+  [Smoothieboard](http://reprap.org/wiki/Smoothieboard)|LPC1769 ARM-Cortex M3|120MHz|512k|64k|3.3-5V|no
+>>>>>>> origin/MPCNC_Rambo_T8_16T_LCD_DualEndstop
 
 ## Current Status: In Development
 
+<<<<<<< HEAD
 Marlin development has reached an important milestone with its first stable release in over 2 years. During this period we focused on cleaning up the code and making it more modern, consistent, readable, and sensible.
 
 ## Future Development
+=======
+Proposed patches should be submitted as a Pull Request against the ([bugfix-2.0.x](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x)) branch.
+
+- This branch is for fixing bugs and integrating any new features for the duration of the Marlin 2.0.x life-cycle.
+- Follow the [Coding Standards](http://marlinfw.org/docs/development/coding_standards.html) to gain points with the maintainers.
+- Please submit your questions and concerns to the [Issue Queue](https://github.com/MarlinFirmware/Marlin/issues).
+>>>>>>> origin/MPCNC_Rambo_T8_16T_LCD_DualEndstop
 
 Marlin 1.1 is the last "flat" version of Marlin!
 
@@ -47,35 +92,8 @@ The current Marlin dev team consists of:
  - Roxanne Neufeld [[@Roxy-3D](https://github.com/Roxy-3D)] - English
  - Scott Lahteine [[@thinkyhead](https://github.com/thinkyhead)] - English
  - Bob Kuhn [[@Bob-the-Kuhn](https://github.com/Bob-the-Kuhn)] - English
- - Andreas Hardtung [[@AnHardt](https://github.com/AnHardt)] - Deutsch, English
- - Nico Tonnhofer [[@Wurstnase](https://github.com/Wurstnase)] - Deutsch, English
- - Jochen Groppe [[@CONSULitAS](https://github.com/CONSULitAS)] - Deutsch, English
+ - Chris Pepper [[@p3p](https://github.com/p3p)] - English
  - João Brazio [[@jbrazio](https://github.com/jbrazio)] - Portuguese, English
- - Bo Hermannsen [[@boelle](https://github.com/boelle)] - Danish, English
- - Bob Cousins [[@bobc](https://github.com/bobc)] - English
- - [[@maverikou](https://github.com/maverikou)]
- - Chris Palmer [[@nophead](https://github.com/nophead)]
- - [[@paclema](https://github.com/paclema)]
- - Erik van der Zalm [[@ErikZalm](https://github.com/ErikZalm)]
- - David Braam [[@daid](https://github.com/daid)]
- - Bernhard Kubicek [[@bkubicek](https://github.com/bkubicek)]
-
-More features have been added by:
- - Alberto Cotronei [[@MagoKimbra](https://github.com/MagoKimbra)] - English, Italian
- - Thomas Moore [[@tcm0116](https://github.com/tcm0116)]
- - Ernesto Martinez [[@emartinez167](https://github.com/emartinez167)]
- - Petr Zahradnik [[@clexpert](https://github.com/clexpert)]
- - Kai [[@Kaibob2](https://github.com/Kaibob2)]
- - Edward Patel [[@epatel](https://github.com/epatel)]
- - F. Malpartida [[@fmalpartida](https://github.com/fmalpartida)] - English, Spanish
- - [[@esenapaj](https://github.com/esenapaj)] - English, Japanese
- - [[@benlye](https://github.com/benlye)]
- - [[@Tannoo](https://github.com/Tannoo)]
- - [[@teemuatlut](https://github.com/teemuatlut)]
- - [[@bgort](https://github.com/bgort)]
- - Luc Van Daele[[@LVD-AC](https://github.com/LVD-AC)] - Dutch, French, English
- - [[@paulusjacobus](https://github.com/paulusjacobus)]
- - ...and many others
 
 ## License
 
